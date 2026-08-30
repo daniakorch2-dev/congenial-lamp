@@ -1,0 +1,887 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #050505;
+    color: white;
+}
+
+/* МЕНЮ */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+   padding: 0 15px;
+
+    background: rgba(5, 5, 5, 0.85);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid #222;
+
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #ff2020;
+}
+
+.menu {
+    display: flex;
+    gap: 25px;
+}
+
+.menu a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #ff2020;
+}
+
+/* ГОЛОВНИЙ ЕКРАН */
+
+.hero {
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(circle at center, #300000 0%, #090909 35%, #050505 70%);
+}
+
+.hero-content {
+    margin-top: 70px;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hero h1 {
+    font-size: 100px;
+    font-weight: 900;
+    letter-spacing: 8px;
+
+    color: white;
+
+    text-shadow:
+        0 0 20px rgba(255, 0, 0, 0.5),
+        0 0 60px rgba(255, 0, 0, 0.25);
+}
+
+.hero p {
+    margin-top: 15px;
+
+    font-size: 22px;
+    color: #aaa;
+}
+
+.buttons {
+    margin-top: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+/* КНОПКИ */
+
+.btn {
+    display: inline-block;
+
+    padding: 16px 35px;
+    margin: 5px;
+
+    border-radius: 6px;
+
+    background: #e50909;
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: 900;
+    font-size: 14px;
+
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.25);
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #ff2b2b;
+    transform: translateY(-3px);
+
+    box-shadow: 0 0 35px rgba(255, 0, 0, 0.5);
+}
+
+.btn-dark {
+    background: #151515;
+    border: 1px solid #333;
+}
+
+.btn-dark:hover {
+    background: #222;
+}
+
+/* РОЗДІЛИ */
+
+.section {
+    min-height: 500px;
+
+    padding: 130px 20px;
+
+    text-align: center;
+
+    border-top: 1px solid #151515;
+
+    background: #080808;
+}
+
+.section:nth-child(even) {
+    background: #050505;
+}
+
+.section h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.section p {
+    color: #999;
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 30px;
+
+    text-align: center;
+
+    background: #030303;
+
+    color: #666;
+
+    border-top: 1px solid #151515;
+}
+
+/* ТЕЛЕФОН */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+        letter-spacing: 4px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .section h2 {
+        font-size: 32px;
+    }
+}
+/* АНІМАЦІЇ */
+
+.hero-content {
+    animation: heroAppear 1.2s ease-out;
+}
+
+@keyframes heroAppear {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo {
+    animation: logoGlow 2s infinite alternate;
+}
+
+@keyframes logoGlow {
+    from {
+        text-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+    }
+
+    to {
+        text-shadow: 0 0 20px rgba(255, 0, 0, 0.9);
+    }
+}
+
+.btn {
+    animation: buttonAppear 1.5s ease-out;
+}
+
+@keyframes buttonAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.section {
+    animation: sectionAppear 1s ease-out;
+}
+
+@keyframes sectionAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* 🔥 АНІМОВАНИЙ ФОН LEGION RP */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: rgba(255, 0, 0, 0.12);
+    border-radius: 50%;
+    filter: blur(100px);
+    animation: redMove 6s infinite alternate ease-in-out;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 0, 0, 0.08);
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: redMove2 8s infinite alternate ease-in-out;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes redMove {
+    0% {
+        transform: translate(-250px, -100px);
+    }
+
+    100% {
+        transform: translate(250px, 150px);
+    }
+}
+
+@keyframes redMove2 {
+    0% {
+        transform: translate(300px, 150px);
+    }
+
+    100% {
+        transform: translate(-300px, -150px);
+    }
+}
+/* 👥 АДМІНІСТРАЦІЯ */
+
+.admin-cards {
+    max-width: 1100px;
+    margin: 50px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.admin-card {
+    padding: 35px 20px;
+
+    background: linear-gradient(145deg, #111, #080808);
+
+    border: 1px solid #222;
+    border-radius: 15px;
+
+    transition: 0.4s;
+}
+
+.admin-card:hover {
+    transform: translateY(-10px);
+
+    border-color: #ff2020;
+
+    box-shadow: 0 15px 45px rgba(255, 0, 0, 0.2);
+}
+
+.admin-avatar {
+    width: 75px;
+    height: 75px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #151515;
+
+    font-size: 35px;
+
+    border: 2px solid #ff2020;
+}
+
+.admin-card h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.admin-card p {
+    margin: 0;
+
+    font-size: 15px;
+
+    color: #777;
+}
+
+@media (max-width: 800px) {
+
+    .admin-cards {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+
+}
+/* 🔥 ПРО LEGION RP */
+
+.about-section {
+    background:
+        radial-gradient(
+            circle at center,
+            #200000 0%,
+            #080808 45%,
+            #050505 100%
+        );
+}
+
+.about-section > p {
+    max-width: 700px;
+    margin: 0 auto 50px;
+    line-height: 1.7;
+}
+
+.about-cards {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.about-card {
+    padding: 35px 25px;
+
+    background: rgba(15, 15, 15, 0.8);
+
+    border: 1px solid #222;
+    border-radius: 15px;
+
+    transition: 0.4s;
+}
+
+.about-card:hover {
+    transform: translateY(-10px);
+
+    border-color: #ff2020;
+
+    box-shadow: 0 15px 50px rgba(255, 0, 0, 0.2);
+}
+
+.about-card > div {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.about-card h3 {
+    margin-bottom: 12px;
+    font-size: 22px;
+}
+
+.about-card p {
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 1.6;
+
+    color: #888;
+}
+
+@media (max-width: 800px) {
+
+    .about-cards {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+
+}
+
+/* 🔥 ГОЛОВНИЙ ТЕКСТ */
+
+.hero-title {
+    margin-top: 15px;
+
+    font-size: 18px;
+    letter-spacing: 5px;
+
+    color: #ff2020;
+
+    font-weight: 900;
+}
+
+.hero-line {
+    width: 100px;
+    height: 3px;
+
+    margin: 20px auto;
+
+    background: #ff2020;
+
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+
+    animation: linePulse 2s infinite alternate;
+}
+
+@keyframes linePulse {
+    from {
+        width: 60px;
+        opacity: 0.5;
+    }
+
+    to {
+        width: 140px;
+        opacity: 1;
+    }
+}
+/* 🔥 ЛОГО LEGION RP */
+
+.logo {
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.logo span {
+    color: #ffffff;
+}
+
+.logo b {
+    color: #ff2020;
+}
+
+.main-logo {
+    font-size: 100px;
+    font-weight: 900;
+    letter-spacing: 8px;
+
+    animation: logoPulse 2.5s infinite alternate;
+}
+
+.main-logo span {
+    color: #ffffff;
+}
+
+.main-logo b {
+    color: #ff2020;
+}
+
+@keyframes logoPulse {
+
+    from {
+        text-shadow:
+            0 0 5px rgba(255, 0, 0, 0.2);
+    }
+
+    to {
+        text-shadow:
+            0 0 15px rgba(255, 0, 0, 0.7),
+            0 0 45px rgba(255, 0, 0, 0.3);
+    }
+
+}
+
+@media (max-width: 900px) {
+
+    .main-logo {
+        font-size: 55px;
+        letter-spacing: 4px;
+    }
+
+}
+/* 🔴 ЛІТАЮЧІ ЧАСТИНКИ */
+
+.particles {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 1;
+}
+
+.particles span {
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    background: #ff2020;
+
+    border-radius: 50%;
+
+    opacity: 0;
+
+    box-shadow: 0 0 12px #ff2020;
+
+    animation: particleMove 8s linear infinite;
+}
+
+/* різні позиції */
+
+.particles span:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.particles span:nth-child(2) {
+    left: 20%;
+    animation-delay: 2s;
+}
+
+.particles span:nth-child(3) {
+    left: 30%;
+    animation-delay: 4s;
+}
+
+.particles span:nth-child(4) {
+    left: 40%;
+    animation-delay: 1s;
+}
+
+.particles span:nth-child(5) {
+    left: 50%;
+    animation-delay: 5s;
+}
+
+.particles span:nth-child(6) {
+    left: 60%;
+    animation-delay: 3s;
+}
+
+.particles span:nth-child(7) {
+    left: 70%;
+    animation-delay: 6s;
+}
+
+.particles span:nth-child(8) {
+    left: 80%;
+    animation-delay: 2.5s;
+}
+
+.particles span:nth-child(9) {
+    left: 90%;
+    animation-delay: 4.5s;
+}
+
+.particles span:nth-child(10) {
+    left: 95%;
+    animation-delay: 7s;
+}
+
+@keyframes particleMove {
+
+    0% {
+        bottom: -10px;
+        opacity: 0;
+        transform: translateX(0);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0.7;
+    }
+
+    100% {
+        bottom: 110%;
+        opacity: 0;
+        transform: translateX(80px);
+    }
+
+}
+/* 🔥 ЕФЕКТ КНОПОК LEGION RP */
+
+.btn {
+    position: relative;
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.btn::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 80%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.25),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+
+    transition: left 0.6s ease;
+}
+
+.btn:hover {
+    transform: translateY(-4px) scale(1.04);
+
+    box-shadow:
+        0 0 15px rgba(255, 0, 0, 0.5),
+        0 0 35px rgba(255, 0, 0, 0.25);
+}
+
+.btn:hover::before {
+    left: 130%;
+}
+
+.btn:active {
+    transform: translateY(-1px) scale(0.98);
+}
+/* 🖱️ РУХ ФОНУ ЗА КУРСОРОМ */
+
+.hero::before {
+    transform: translate(
+        var(--mouse-x, 0px),
+        var(--mouse-y, 0px)
+    );
+
+    transition: transform 0.3s ease-out;
+}
+
+.hero::after {
+    transform: translate(
+        calc(var(--mouse-x, 0px) * -1),
+        calc(var(--mouse-y, 0px) * -1)
+    );
+
+    transition: transform 0.5s ease-out;
+}
+/* 🔥 FOOTER */
+
+.site-footer {
+    padding: 70px 20px 30px;
+
+    text-align: center;
+
+    background: #030303;
+
+    border-top: 1px solid #1c1c1c;
+
+    position: relative;
+}
+
+.footer-logo {
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+}
+
+.footer-logo span {
+    color: white;
+}
+
+.footer-logo b {
+    color: #ff2020;
+
+    text-shadow:
+        0 0 15px rgba(255, 0, 0, 0.6);
+}
+
+.footer-text {
+    color: #777;
+
+    font-size: 15px;
+
+    margin-bottom: 30px;
+}
+
+.footer-links {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    margin-bottom: 35px;
+}
+
+.footer-links a {
+    color: #aaa;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ff2020;
+
+    transform: translateY(-3px);
+}
+
+.footer-line {
+    max-width: 700px;
+
+    height: 1px;
+
+    margin: 0 auto 25px;
+
+    background: #222;
+}
+
+.copyright {
+    color: #444;
+
+    font-size: 13px;
+
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+
+    .footer-links {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+}
+/* 🔥 МЕНЮ */
+
+.menu a {
+    position: relative;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.menu a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -8px;
+
+    width: 0;
+    height: 2px;
+
+    background: #ff2020;
+
+    transform: translateX(-50%);
+
+    transition: width 0.3s ease;
+
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+}
+
+.menu a:hover {
+    color: #ff2020;
+
+    transform: translateY(-2px);
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
